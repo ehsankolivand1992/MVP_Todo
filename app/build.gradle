@@ -4,6 +4,10 @@ apply plugin: 'kotlin-android'
 
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'org.greenrobot.greendao'
+
+apply plugin: 'kotlin-kapt'
+
+
 android {
     compileSdkVersion 29
     buildToolsVersion "29.0.2"
@@ -22,6 +26,10 @@ android {
         }
     }
 }
+greendao {
+    schemaVersion 2
+    targetGenDir 'src/main/java'
+}
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
@@ -35,6 +43,10 @@ dependencies {
     implementation 'com.google.android.material:material:1.2.0-alpha03'
 
     implementation 'org.greenrobot:greendao:3.2.2' // add library
+
+
+    api 'com.google.dagger:dagger:2.26'
+    kapt 'com.google.dagger:dagger-compiler:2.26'
 
 
 }
