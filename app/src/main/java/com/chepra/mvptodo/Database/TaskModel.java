@@ -1,5 +1,7 @@
 package com.chepra.mvptodo.Database;
 
+import com.chepra.mvptodo.main.mvpPackage.MainMVP;
+
 import org.greenrobot.greendao.annotation.Entity;
 import org.greenrobot.greendao.annotation.Id;
 import org.greenrobot.greendao.annotation.Keep;
@@ -7,10 +9,10 @@ import org.greenrobot.greendao.annotation.Property;
 import org.greenrobot.greendao.annotation.Generated;
 
 @Entity(nameInDb = "Task")
-public class TaskModel {
+public class TaskModel{
 
     @Id(autoincrement = true)
-    private long id;
+    private Long id;
     @Property(nameInDb = "title")
     private String title;
     @Property(nameInDb = "description")
@@ -20,11 +22,8 @@ public class TaskModel {
     @Property(nameInDb = "done")
     private boolean done;
 
-
-
-
-    @Generated(hash = 1167150458)
-    public TaskModel(long id, String title, String description, int value,
+    @Generated(hash = 332930535)
+    public TaskModel(Long id, String title, String description, int value,
             boolean done) {
         this.id = id;
         this.title = title;
@@ -37,14 +36,11 @@ public class TaskModel {
     public TaskModel() {
     }
 
-
- 
-
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
